@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background:linear-gradient(black, rgb(0, 21, 35));
+    min-height: 200vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+.name{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    margin-left: 7%;
+    margin-top: 2%;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.name:hover{
+    color: rgb(0, 255, 255);
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 7%;
+}
+nav button{
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: .9em;
+    font-weight: 300;
+    margin-left: .4em;
+    margin-top: 2%;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 10px;
+}
+
+nav button:hover{
+    background-color: rgb(0, 21, 35);
+    color: rgb(0, 255, 255);
+    box-shadow: 0 0 100px rgb(0, 255, 255);
+    
+}
+
+
+@media only screen and (max-width: 650px){
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+    nav{
+        margin: 0;
+    }
+}
+/* navbar and header ends */
+
+.mainName {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+    color: rgba(0, 234, 255, 0.465);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.492);
+    opacity: 1;
+    margin: 0.5em 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+
+.mainName:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 100px rgb(255, 255, 255);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.subName {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    color: rgba(0, 234, 255, 0.465);
+    opacity: 1;
+    margin: 0.5em 0;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+

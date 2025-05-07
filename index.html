@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT WizFarm™ | A Core Computing Event</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="intro">
+        <header>
+            <p class="name" onmouseover="nameHover()" onmouseout="nameHoverOut()">IT WizFarm</p>
+            <nav>
+
+                <button>events</button>
+                <button>details</button>
+                <button>brochure</button>
+                <button>rules</button>
+                <button>contact</button>
+
+            </nav>
+        </header>
+
+        <p class="mainName">IT WizFarm</p>
+        <p class="subName">A core computing event.</p>
+
+
+    </section>
+
+
+    <script>
+        function nameHover(){
+            if(window.innerWidth > 750){
+                document.querySelector('.name').innerHTML = "IT WizFarm - A core computing event.";
+                document.querySelector('.name').style.letterSpacing = "3px";
+            }
+        }
+        function nameHoverOut(){
+            if(window.innerWidth > 750){
+                document.querySelector('.name').innerHTML = "IT WizFarm";
+                document.querySelector('.name').style.letterSpacing = "0";
+            }
+        }
+    </script>
+
+
+<!-- in reality, this became the background design -->
+<script src="mousetrail.js"></script>
+</body>
+</html>
