@@ -1,5 +1,7 @@
 var canvas = document.createElement('canvas');
 canvas.style.position = 'absolute';
+canvas.style.top = '0';
+canvas.style.left = '0';
 canvas.style.zIndex = -1;
 document.body.appendChild(canvas);
 var ctx = canvas.getContext('2d');
@@ -10,7 +12,7 @@ var color = 'rgba(0, 255, 255, 0.5)'; // Aqua color with 50% transparency
 
 function init() {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight * 0.90; // Extend only up to 85vh
+    canvas.height = window.innerHeight * 1; // Extend only up to 85vh
     for (var i = 0; i < 1000; i++) {
         particles.push({
             x: Math.random() * canvas.width,
