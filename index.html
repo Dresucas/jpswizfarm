@@ -9,7 +9,7 @@
 <body>
     <section id="intro">
         <header>
-            <p class="name" onmouseover="nameHover()" onmouseout="nameHoverOut()">IT WizFarm</p>
+            <p class="name" onmouseover="nameHover()" onmouseout="nameHoverOut()">JSCIT</p>
             <nav>
 
                 <button>events</button>
@@ -24,24 +24,82 @@
         <p class="mainName">IT WizFarm</p>
         <p class="subName">A core computing event.</p>
 
+        <button id="eventsButton">Events</button>
 
+        <script>
+        document.querySelector('#eventsButton').addEventListener('click', function(){
+            window.scrollTo({
+                top: window.innerHeight+30,
+                behavior: 'smooth'
+            });
+        });
+        </script>
     </section>
 
 
     <script>
         function nameHover(){
             if(window.innerWidth > 750){
-                document.querySelector('.name').innerHTML = "IT WizFarm - A core computing event.";
+                document.querySelector('.name').innerHTML = "Jagran Students Council for Information Technology";
                 document.querySelector('.name').style.letterSpacing = "3px";
             }
         }
         function nameHoverOut(){
             if(window.innerWidth > 750){
-                document.querySelector('.name').innerHTML = "IT WizFarm";
+                document.querySelector('.name').innerHTML = "JSCIT";
                 document.querySelector('.name').style.letterSpacing = "0";
             }
         }
     </script>
+
+
+    <section id="cardDeck">
+        <p class="head2">Events</p>
+<div class="deck">
+    <div class="card" id="card1">
+        <img src="gaming1.png" alt="" id="imgC1">
+        <h3>Gaming</h3>
+        <p>Description for card 1.</p>
+    </div>
+    <div class="card" id="card1">
+        <img src="gaming.png" alt="" id="imgC1">
+        <h3>Gaming</h3>
+        <p>Description for card 1.</p>
+    </div>
+    <div class="card" id="card3">
+        <h3>Card 3</h3>
+        <p>Description for card 3.</p>
+    </div>
+    <div class="card" id="card4">
+        <h3>Card 4</h3>
+        <p>Description for card 4.</p>
+    </div>
+    <div class="card" id="card5">
+        <h3>Card 5</h3>
+        <p>Description for card 5.</p>
+    </div>
+    <div class="card" id="card6">
+        <h3>Card 6</h3>
+        <p>Description for card 6.</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.04,
+        scale: 1.5
+    });
+</script>
+
+
+
+    </section>
+
+
 
 
 <!-- in reality, this became the background design -->
