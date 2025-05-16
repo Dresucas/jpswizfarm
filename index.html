@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT WizFarm™ | A Core Computing Event</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="horizontal.css">
 </head>
 <body>
     <section id="intro">
@@ -32,6 +33,14 @@
                 top: window.innerHeight+30,
                 behavior: 'smooth'
             });
+            
+            
+
+
+            document.getElementById('head2').style.opacity = "0";
+            setTimeout(function(){
+                document.getElementById('head2').style.opacity = "1";
+            }, 500);
         });
         </script>
     </section>
@@ -52,52 +61,47 @@
         }
     </script>
 
+    <section id="events" style="background-color: black;">
+        <p class="head2" id="head2">EVENTS</p>
+        <style>
+            .eventNames{
+                position: absolute;
+                margin-top: 100vh;
+                font-family: 'Poppins', sans-serif;
+                font-size: 40px;
+                color: rgb(0, 234, 255);
+                text-shadow: 0 0 10px rgba(0, 217, 255, 0.492);
+                opacity: 1;
+                transition: .3s;
+                cursor: pointer;
+            }
+            .eventNames:hover{
+                color: rgb(255, 255, 255);
+                text-shadow: 0 0 100px rgb(255, 255, 255);
+                opacity: 1;
+            }
+            .eventDesc{
+                position: absolute;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                display: none;
+            }
+            
 
-    <section id="cardDeck">
-        <p class="head2">Events</p>
-<div class="deck">
-    <div class="card" id="card1">
-        <img src="gaming1.png" alt="" id="imgC1">
-        <h3>Gaming</h3>
-        <p>Description for card 1.</p>
-    </div>
-    <div class="card" id="card1">
-        <img src="gaming.png" alt="" id="imgC1">
-        <h3>Gaming</h3>
-        <p>Description for card 1.</p>
-    </div>
-    <div class="card" id="card3">
-        <h3>Card 3</h3>
-        <p>Description for card 3.</p>
-    </div>
-    <div class="card" id="card4">
-        <h3>Card 4</h3>
-        <p>Description for card 4.</p>
-    </div>
-    <div class="card" id="card5">
-        <h3>Card 5</h3>
-        <p>Description for card 5.</p>
-    </div>
-    <div class="card" id="card6">
-        <h3>Card 6</h3>
-        <p>Description for card 6.</p>
-    </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-<script>
-    VanillaTilt.init(document.querySelectorAll(".card"), {
-        max: 15,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.04,
-        scale: 1.5
-    });
-</script>
-
-
-
-    </section>
+        </style>
+        <p class="eventNames" style="top: 15%; left: 42%;" onclick="eventDesc1.style.display = eventDesc1.style.display === 'none' ? 'block' : 'none'">Gaming</p>
+        <div class="eventDesc" id="eventDesc1" style="top: 20%; left: 42%;">This is the gaming event description.</div>
+        <p class="eventNames" style="top: 38%; left: 25%;" onclick="eventDesc2.style.display = eventDesc2.style.display === 'none' ? 'block' : 'none'">Editing</p>
+        <div class="eventDesc" id="eventDesc2" style="top: 43%; left: 25%;">This is the editing event description.</div>
+        <p class="eventNames" style="top: 12%; left: 18%;" onclick="eventDesc3.style.display = eventDesc3.style.display === 'none' ? 'block' : 'none'">Coding</p>
+        <div class="eventDesc" id="eventDesc3" style="top: 17%; left: 18%;">This is the coding event description.</div>
+        <p class="eventNames" style="top: 55%; left: 55%;" onclick="eventDesc4.style.display = eventDesc4.style.display === 'none' ? 'block' : 'none'">Designing</p>
+        <div class="eventDesc" id="eventDesc4" style="top: 60%; left: 55%;">This is the designing event description.</div>
+        <p class="eventNames" style="top: 22%; left: 72%;" onclick="eventDesc5.style.display = eventDesc5.style.display === 'none' ? 'block' : 'none'">Photography</p>
+        <div class="eventDesc" id="eventDesc5" style="top: 27%; left: 72%;">This is the photography event description.</div>
+        <p class="eventNames" style="top: 48%; left: 15%;" onclick="eventDesc6.style.display = eventDesc6.style.display === 'none' ? 'block' : 'none'">Videography</p>
+        <div class="eventDesc" id="eventDesc6" style="top: 53%; left: 15%;">This is the videography event description.</div>
 
 
 
