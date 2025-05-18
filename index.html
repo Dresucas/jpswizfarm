@@ -241,18 +241,123 @@
             
 
         </style>
-        <p class="eventNames" style="top: 15%; left: 42%;" onclick="eventDesc1.style.display = eventDesc1.style.display === 'none' ? 'block' : 'none'">Gaming</p>
-        <div class="eventDesc" id="eventDesc1" style="top: 20%; left: 42%;">This is the gaming event description.</div>
+        <p class="eventNames" id="gamingDesc" style="top: 15%; left: 42%;" onclick="eventDesc1.style.display = eventDesc1.style.display === 'none' ? 'block' : 'none'">Gaming</p>
+
         <p class="eventNames" style="top: 38%; left: 25%;" onclick="eventDesc2.style.display = eventDesc2.style.display === 'none' ? 'block' : 'none'">Editing</p>
-        <div class="eventDesc" id="eventDesc2" style="top: 43%; left: 25%;">This is the editing event description.</div>
+
         <p class="eventNames" style="top: 12%; left: 18%;" onclick="eventDesc3.style.display = eventDesc3.style.display === 'none' ? 'block' : 'none'">Coding</p>
-        <div class="eventDesc" id="eventDesc3" style="top: 17%; left: 18%;">This is the coding event description.</div>
+
         <p class="eventNames" style="top: 55%; left: 55%;" onclick="eventDesc4.style.display = eventDesc4.style.display === 'none' ? 'block' : 'none'">Designing</p>
-        <div class="eventDesc" id="eventDesc4" style="top: 60%; left: 55%;">This is the designing event description.</div>
+
         <p class="eventNames" style="top: 22%; left: 72%;" onclick="eventDesc5.style.display = eventDesc5.style.display === 'none' ? 'block' : 'none'">Photography</p>
-        <div class="eventDesc" id="eventDesc5" style="top: 27%; left: 72%;">This is the photography event description.</div>
+
         <p class="eventNames" style="top: 48%; left: 15%;" onclick="eventDesc6.style.display = eventDesc6.style.display === 'none' ? 'block' : 'none'">Videography</p>
-        <div class="eventDesc" id="eventDesc6" style="top: 53%; left: 15%;">This is the videography event description.</div>
+
+
+<script>
+    document.querySelector('#gamingDesc').addEventListener('click', function() {
+        var existingDiv = this.parentNode.querySelector('.hoverDiv');
+        if (existingDiv) {
+            existingDiv.style.transition = 'max-height 0.3s ease-in, padding 0.3s ease-in';
+            existingDiv.style.maxHeight = '0';
+            existingDiv.style.padding = '0';
+            setTimeout(function() {
+                existingDiv.parentNode.removeChild(existingDiv);
+            }, 300);
+        } else {
+            var div = document.createElement('div');
+            div.className = 'hoverDiv';
+            div.style.position = 'absolute';
+            div.style.top = '150%';
+
+            div.style.backgroundSize = "cover";
+            div.style.left = '50%';
+            div.style.transform = 'translate(-50%, -50%)';
+            div.style.width = '90vw';
+            div.style.height = '90vh';
+            div.style.borderRadius = '10px';
+            div.style.maxHeight = '0';
+            div.style.filter = 'blur(10px)';
+            div.style.overflow = 'hidden';
+            div.style.backgroundColor = 'black';
+            div.style.padding = '0';
+            div.style.transition = 'max-height 0.3s ease-out, padding 0.3s ease-out, filter 1s ease-out';
+            this.parentNode.appendChild(div);
+            var closeButton = document.createElement('button');
+            closeButton.innerHTML = 'x';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '10px';
+            closeButton.style.right = '10px';
+            closeButton.style.background = 'none';
+            closeButton.style.border = 'none';
+            closeButton.style.color = 'rgba(255, 255, 255, 0.7)';
+            closeButton.style.transition = 'transform 0.3s, color 0.2s';
+            closeButton.addEventListener('mouseover', function() {
+                closeButton.style.transform = 'scale(1.5)';
+                closeButton.style.color = 'red';
+            });
+            closeButton.addEventListener('mouseout', function() {
+                closeButton.style.transform = 'scale(1)';
+                closeButton.style.color = 'rgba(255, 255, 255, 0.7)';
+            });
+            closeButton.style.fontSize = '30px';
+            closeButton.style.cursor = 'pointer';
+
+            div.appendChild(closeButton);
+
+                        var img = document.createElement('img');
+            img.src = 'images/gamingBG.jpg';
+            img.style.position = 'absolute';
+            img.style.top = '50%';
+            img.style.left = '50%';
+            img.style.userSelect = 'none';
+            img.style.transform = 'translate(-50%, -50%)';
+            img.style.opacity = '1';
+            img.style.width = '100%';
+            img.style.height = 'auto';
+            img.style.zIndex = '-1';
+            div.appendChild(img);
+            img.style.transition = 'filter .5s';
+            setTimeout(function() {
+                img.style.filter = 'grayscale(0)';
+            }, 500);
+            img.style.filter = 'grayscale(1)';
+
+
+            closeButton.addEventListener('click', function() {
+                div.style.transition = 'max-height 0.5s ease-in, padding 0.3s ease-in';
+                div.style.maxHeight = '0';
+                div.style.padding = '0';
+                setTimeout(function() {
+                    div.parentNode.removeChild(div);
+                }, 500);
+            });
+
+            var h1 = document.createElement('h1');
+            h1.innerHTML = 'GAMING';
+            h1.style.position = 'absolute';
+            h1.style.top = '0';
+            h1.style.left = '0';
+            h1.style.fontSize = '50px';
+            h1.style.fontWeight = '200';
+            h1.style.transition = 'opacity .5s ease-in';
+            h1.style.opacity = '0';
+            h1.style.fontFamily = 'Play';
+            h1.style.transform = 'translateX(100px)';
+            div.appendChild(h1);
+            setTimeout(function() {
+                h1.style.opacity = '1';
+            }, 500);
+
+            setTimeout(function() {
+                div.style.maxHeight = '100vh';
+                div.style.padding = '20px';
+                div.style.filter = 'blur(0)';
+            }, 0);
+        }
+    });
+
+</script>
 
 </section>
 
