@@ -13,11 +13,162 @@
             <p class="name" onmouseover="nameHover()" onmouseout="nameHoverOut()">JSCIT</p>
             <nav>
 
-                <button>events</button>
-                <button>details</button>
-                <button>brochure</button>
-                <button>rules</button>
-                <button>contact</button>
+                <div class="dropdown">
+                    <button class="dropbtn">events</button>
+                    <div class="dropdown-content">
+                        <a href="#" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Gaming</span>
+                            <span><img  src="images/gaming.svg" alt="" width="20" height="20"></span>
+                        </a>
+                        <a href="#" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Coding</span>
+                            <span><img  src="images/code.svg" alt="" width="20" height="20"></span>
+                        </a>
+                        <a href="#" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Editing</span>
+                            <span><img  src="images/editing.svg" alt="" width="20" height="20"></span>
+                        </a>
+                        <a href="#" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Designing</span>
+                            <span><img  src="images/design.svg" alt="" width="20" height="20"></span>
+                        </a>
+                        <a href="#" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Photography</span>
+                            <span><img  src="images/photo.svg" alt="" width="20" height="20"></span>
+                        </a>
+                        <a href="#" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Videography</span>
+                            <span><img  src="images/video.svg" alt="" width="18" height="18"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">details</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="about" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Details</span>
+                            <span><img  src="images/about.svg" alt="" width="20" height="20"></span>
+                        </a>
+                        <a href="#" id="register" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Register</span>
+                            <span><img src="images/register.svg" alt="" width="20" height="20"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">brochure</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="brochure" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Brochure</span>
+                            <span><img  src="images/brochure.svg" alt="" width="20" height="20"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">rules</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="rules" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Rules</span>
+                            <span><img  src="images/rules.svg" alt="" width="20" height="20"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">contact</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="phone" style="display: flex; justify-content: space-between; align-items: center;">
+                        <span d>Phone</span>
+                        <span><img  src="images/phone.svg" alt="" width="20" height="20"></span>
+                    </a>
+                        <a href="#" id="email" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span >Email</span>
+                            <span><img  src="images/email.svg" alt="" width="20" height="20"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <style>
+                    .dropdown {
+                        position: relative;
+                        display: inline-block;
+                    }
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        font-family: 'Poppins', sans-serif;
+                        background-color: #004949;
+                        min-width: 160px;
+                        margin-top: 10px;
+                        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                        z-index: 1;
+                        border-radius: 10px;
+                        display: none;
+                    }
+                    .dropdown-content a {
+                        color: rgb(0, 255, 213);
+                        padding: 12px 16px;
+                        text-decoration: none;
+                        display: block;
+                        transition: .3s;
+                        border-radius: 10px;
+                    }
+                    .dropdown-content a:hover {
+                        background-color: #007f74;
+                        box-shadow: 0 0 50px rgb(0, 0, 0);
+                    }
+                    .dropdown-content a img{
+                        margin-top: 4px;
+                        margin-right: 10px;
+                        transition: .4s;
+                    }
+                    .dropdown-content a:hover img{
+                        filter: invert(1);
+                        scale: 2
+                    }
+                    .dropbtn {
+                        background-color: #000000;
+                        color: white;
+                        padding: 10px;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+                    .dropbtn:hover, .dropbtn:focus {
+                        background-color: #000000;
+                        box-shadow: 0 0 100px rgb(0, 217, 255);
+                    }
+                    @keyframes jerk {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-10px); }
+                    }
+                </style>
+                <script>
+                    document.querySelectorAll('.dropdown').forEach(function(drop){
+                        var rect = drop.getBoundingClientRect();
+                        drop.addEventListener('mouseover', function(){
+                            var content = drop.querySelector('.dropdown-content');
+                            content.style.display = 'block';
+                            content.style.animation = 'jerk 0.3s ease';
+                        });
+                        drop.addEventListener('mouseover', function(){
+                            document.querySelectorAll('.dropdown-content').forEach(function(menu){
+                                if(menu !== drop.querySelector('.dropdown-content')){
+                                    menu.style.display = 'none';
+                                    menu.style.animation = '';
+                                }
+                            });
+                            var content = drop.querySelector('.dropdown-content');
+                            content.style.display = 'block';
+                            content.style.animation = 'jerk 0.3s ease';
+                        });
+                        document.body.addEventListener('click', function(e){
+                            if(e.target !== drop && e.target !== drop.querySelector('.dropbtn') && !drop.querySelector('.dropdown-content').contains(e.target)){
+                                var content = drop.querySelector('.dropdown-content');
+                                content.style.display = 'none';
+                                content.style.animation = '';
+                            }
+                        });
+                    });
+                </script>
 
             </nav>
         </header>
@@ -103,7 +254,7 @@
         <p class="eventNames" style="top: 48%; left: 15%;" onclick="eventDesc6.style.display = eventDesc6.style.display === 'none' ? 'block' : 'none'">Videography</p>
         <div class="eventDesc" id="eventDesc6" style="top: 53%; left: 15%;">This is the videography event description.</div>
 
-
+</section>
 
 
 <!-- in reality, this became the background design -->
