@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Play:wght@400;700&display=swap');
 
 body{
     margin: 0;
@@ -137,24 +136,65 @@ nav button:hover{
 
 
 
-.head2{
-    font-family: 'Poppins', sans-serif;
-    font-size: 10vw;
-    font-weight: 700;
-    color: rgb(0, 114, 114);
-    opacity: 1;
-    position: absolute;
-    top: calc(200vh - 70vh);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    transition: .3s;
-    /* text-shadow: 0 0 10px rgb(0, 0, 0); */
-}
 
-
-
+/* section 2 Designing */
 
 #events{
-    background-color: black;
+    min-height: 100vh;
+        display: flex;
+        align-items: center;
+    justify-content: center;
+    background-color: rgb(199, 199, 199);
+}
+
+.imgcontainer{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.imgSq{
+    position: inherit;
+    width: 70vw;
+    height: 70vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 100px rgb(0, 0, 0);
+}
+
+#imgC1{
+    scale: .7;
+    position: absolute;
+    left: 2vw;
+    top: 129vh;
+    z-index: 1;
+
+}
+
+#imgC2{
+width: 800px;
+height: 800px;
+position: absolute;
+left: 7vw;
+top: 110vh;
+z-index: 0;
+}
+
+.T1{
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 6em;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+    opacity: 1;
+    margin: 0.5em 0;
+    top: 10%;
+    left: 99%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+    z-index: 2;
 }
