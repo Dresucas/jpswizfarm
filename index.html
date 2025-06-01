@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT WizFarm™ | A Core Computing Event</title>
+    <title>IT WizFarm | A Core Computing Event</title>
     <link rel="icon" href="images/jscitLogo.png" type="image/png">
 
     <link rel="stylesheet" href="style.css">
@@ -197,13 +197,26 @@
                     eventDesc.style.scale = "1";
                 }, randomTime);
             });
-;
-            document.getElementById('head2').style.opacity = "0";
+;           
+            document.getElementById('imgC1').style.transform = "translateX(-10%)";
+            document.getElementById('imgC1').style.opacity = "0";
             setTimeout(function(){
-                document.getElementById('head2').style.opacity = "1";
+                document.getElementById('imgC1').style.transform = "translateX(0)";
+                document.getElementById('imgC1').style.opacity = "1";
+                document.getElementById('imgC1').style.transition = "transform 0.5s ease, opacity 0.5s ease";
             }, 300);
+                        document.getElementById('imgC2').style.transform = "translateX(20%)";
+            document.getElementById('imgC2').style.opacity = "0";
+            setTimeout(function(){
+                document.getElementById('imgC2').style.transform = "translateX(0)";
+                document.getElementById('imgC2').style.opacity = "1";
+                document.getElementById('imgC2').style.transition = "transform 0.5s ease, opacity 0.5s ease";
+            }, 200);
+
         });
+
         </script>
+
     </section>
 
 
@@ -222,360 +235,26 @@
         }
     </script>
 
-    <section id="events" style="background-color: black;">
-        <p class="head2" id="head2">EVENTS</p>
-        <style>
-            .eventNames{
-                position: absolute;
-                margin-top: 100vh;
-                font-family: 'Poppins', sans-serif;
-                font-size: 40px;
-                color: rgb(0, 234, 255);
-                text-shadow: 0 0 10px rgba(0, 217, 255, 0.492);
-                opacity: 1;
-                transition: .3s;
-                cursor: pointer;
-            }
-            .eventNames:hover{
-                color: rgb(255, 255, 255);
-                text-shadow: 0 0 100px rgb(255, 255, 255);
-                opacity: 1;
-            }
-            .eventDesc{
-                position: absolute;
-                background-color: black;
-                color: white;
-                padding: 10px;
-                display: none;
-            }
-            
 
-        </style>
-        <p class="eventNames" id="gamingDesc" style="top: 15%; left: 42%;" onclick="eventDesc1.style.display = eventDesc1.style.display === 'none' ? 'block' : 'none'">Gaming</p>
+<section id="events">
+    <div class="imgcontainer">
+        <div id="imgSq1" class="imgSq">
+            <img src="/images/cards/photography/camera.png" id="imgC1">
+            <img src="/images/cards/photography/bushes.png" id="imgC2">
+            <p class="T1">Photography</p>
+        </div>
 
-        <p class="eventNames" id="editingDesc" style="top: 38%; left: 25%;" onclick="eventDesc2.style.display = eventDesc2.style.display === 'none' ? 'block' : 'none'">Editing</p>
-
-        <p class="eventNames" id="codingDesc" style="top: 12%; left: 18%;" onclick="eventDesc3.style.display = eventDesc3.style.display === 'none' ? 'block' : 'none'">Coding</p>
-
-        <p class="eventNames" id="designingDesc" style="top: 55%; left: 55%;" onclick="eventDesc4.style.display = eventDesc4.style.display === 'none' ? 'block' : 'none'">Designing</p>
-
-        <p class="eventNames" id="photographyDesc" style="top: 22%; left: 72%;" onclick="eventDesc5.style.display = eventDesc5.style.display === 'none' ? 'block' : 'none'">Photography</p>
-
-        <p class="eventNames" id="videographyDesc" style="top: 48%; left: 15%;" onclick="eventDesc6.style.display = eventDesc6.style.display === 'none' ? 'block' : 'none'">Videography</p>
-<!-- theGameScreen -->
-
-<script>
-    document.querySelector('#gamingDesc').addEventListener('click', function() {
-        var existingDiv = this.parentNode.querySelector('.hoverDiv');
-        if (existingDiv) {
-            existingDiv.style.transition = 'max-height 0.3s ease-in, padding 0.3s ease-in';
-            existingDiv.style.maxHeight = '0';
-            existingDiv.style.padding = '0';
-            setTimeout(function() {
-                existingDiv.parentNode.removeChild(existingDiv);
-            }, 300);
-        } else {
-            var div = document.createElement('div');
-            div.className = 'hoverDiv';
-            div.style.position = 'absolute';
-            div.style.top = '150%';
-
-            div.style.backgroundSize = "cover";
-            div.style.left = '50%';
-            div.style.transform = 'translate(-50%, -50%)';
-            div.style.width = '80vw';
-            div.style.height = '90vh';
-            div.style.borderRadius = '10px';
-            div.style.maxHeight = '0';
-            div.style.filter = 'blur(10px)';
-            div.style.overflow = 'hidden';
-            div.style.backgroundColor = 'black';
-            div.style.padding = '0';
-            div.style.transition = 'max-height 0.3s ease-out, padding 0.3s ease-out, filter 1s ease-out';
-            this.parentNode.appendChild(div);
-            var closeButton = document.createElement('button');
-            closeButton.innerHTML = 'x';
-            closeButton.style.position = 'absolute';
-            closeButton.style.top = '10px';
-            closeButton.style.right = '10px';
-            closeButton.style.background = 'none';
-            closeButton.style.border = 'none';
-            closeButton.style.color = 'rgba(255, 255, 255, 0.7)';
-            closeButton.style.transition = 'transform 0.3s, color 0.2s';
-            closeButton.addEventListener('mouseover', function() {
-                closeButton.style.transform = 'scale(1.5)';
-                closeButton.style.color = 'red';
-            });
-            closeButton.addEventListener('mouseout', function() {
-                closeButton.style.transform = 'scale(1)';
-                closeButton.style.color = 'rgba(255, 255, 255, 0.7)';
-            });
-            closeButton.style.fontSize = '30px';
-            closeButton.style.cursor = 'pointer';
-
-            div.appendChild(closeButton);
-
-                        var imgBg = document.createElement('img');
-            imgBg.src = 'images/testParallax/gamingBG2.png';
-            imgBg.style.position = 'absolute';
-            imgBg.style.top = '50%';
-            imgBg.style.left = '50%';
-            imgBg.style.userSelect = 'none';
-            imgBg.style.transform = 'translate(-50%, -50%)';
-            imgBg.style.opacity = '1';
-            imgBg.style.width = '100%';
-            imgBg.style.height = 'auto';
-            imgBg.style.zIndex = '-1';
-            div.appendChild(imgBg);
-
-            var imgFg = document.createElement('img');
-            imgFg.src = 'images/testParallax/gamingBG1.png';
-            imgFg.style.position = 'absolute';
-            imgFg.style.top = '50%';
-            imgFg.style.left = '50%';
-            imgFg.style.width = '150%';
-            imgFg.style.userSelect = 'none';
-            imgFg.style.transform = 'translate(-50%, -50%)';
-            imgFg.style.opacity = '1';
-            imgFg.style.width = '100%';
-            imgFg.style.height = 'auto';
-            imgFg.style.zIndex = '-1';
-            div.appendChild(imgFg);
-            document.addEventListener('mousemove', function(e) {
-                var x = e.clientX;
-                var y = e.clientY;
-                imgBg.style.transform = 'translate(-50%, -50%)';
-                imgFg.style.transform = 'translate(-50%, calc(-50% + ' + (y * 0.01) + 'px)) translateX(' + (x * 0.02) + 'px)';
-            });
-
-
-            closeButton.addEventListener('click', function() {
-                div.style.transition = 'max-height 0.5s ease-in, padding 0.3s ease-in';
-                div.style.maxHeight = '0';
-                div.style.padding = '0';
-                setTimeout(function() {
-                    div.parentNode.removeChild(div);
-                }, 500);
-            });
-
-            var box = document.createElement('div');
-            box.style.position = 'absolute';
-            box.style.width = '500px';
-            box.style.height = 'inherit';
-            box.style.background = 'black';
-            box.style.top = '50%';
-            box.style.overflow = 'hidden';
-            box.style.border = '1px solid white';
-            box.style.left = '-50%';
-            box.style.borderRadius = '10px';
-            box.style.transform = 'translateY(-50%)';
-            box.style.filter = 'blur(0px)';
-
-            box.style.transition = 'left 0.5s ease-out';
-            div.appendChild(box);
-            setTimeout(function() {
-                setTimeout(function() {
-                    box.style.left = '0%';
-                }, );
-            }, 0);
-
-            var h1 = document.createElement('h1');
-            h1.innerHTML = 'GAMING';
-            h1.style.position = 'absolute';
-            h1.style.top = '0';
-            h1.style.left = '0';
-            h1.style.fontSize = '50px';
-            h1.style.fontWeight = '200';
-            h1.style.transition = 'opacity .5s ease-in';
-            h1.style.opacity = '0';
-            h1.style.fontFamily = 'Play';
-            h1.style.transform = 'translateX(100px)';
-            div.appendChild(h1);
-            setTimeout(function() {
-                h1.style.opacity = '1';
-            }, 500);
-
-            setTimeout(function() {
-                div.style.maxHeight = '100vh';
-                div.style.padding = '20px';
-                div.style.filter = 'blur(0)';
-            }, 0);
-        }
-    });
-
-</script>
-
-<!-- theCodeScreen -->
-<script>
-    document.querySelector('#codingDesc').addEventListener('click', function() {
-        var existingDiv = this.parentNode.querySelector('.codingDiv');
-        if (!existingDiv) {
-            var div = document.createElement('div');
-            div.className = 'codingDiv';
-            div.style.position = 'absolute';
-            div.style.left = '50%';
-            div.style.top = '150%';
-            div.style.transform = 'translate(-50%, -50%) scale(0)';
-            div.style.width = '80vw';
-            div.borderRadius = '10px';
-            div.style.height = '90vh';
-            div.style.backgroundColor = 'black';
-            div.style.zIndex = '1000';
-            div.style.overflow = 'hidden';
-            div.style.boxShadow = '0 0 500px rgba(0, 0, 0, 1)';
-            div.style.transition = 'transform 0.3s ease-in-out';
-            this.parentNode.appendChild(div);
-            setTimeout(function() {
-                div.style.transform = 'translate(-50%, -50%) scale(1)';
-            }, 0);
-        }
-
-        var closeButton = document.createElement('button');
-        closeButton.innerHTML = 'x';
-        closeButton.style.position = 'absolute';
-        closeButton.style.top = '10px';
-        closeButton.style.right = '10px';
-        closeButton.style.background = 'none';
-        closeButton.style.border = 'none';
-        closeButton.style.color = 'rgba(255, 255, 255, 0.7)';
-        closeButton.style.fontSize = '30px';
-        closeButton.style.cursor = 'pointer';
-        closeButton.style.transition = 'transform 0.3s, color 0.2s';
-        
-        closeButton.addEventListener('mouseover', function() {
-            closeButton.style.transform = 'scale(1.5)';
-            closeButton.style.color = 'red';
-        });
-
-        closeButton.addEventListener('mouseout', function() {
-            closeButton.style.transform = 'scale(1)';
-            closeButton.style.color = 'rgba(255, 255, 255, 0.7)';
-        });
-
-        closeButton.addEventListener('click', function() {
-            div.style.transition = 'transform 0.3s ease-in-out, opacity 0.5s ease-in-out';
-            div.style.transform = 'translate(-50%, -50%) scale(0)';
-            div.style.opacity = '0';
-            setTimeout(function() {
-                div.parentNode.removeChild(div);
-            }, 500);
-        });
-
-        div.appendChild(closeButton);
-var bgCode = document.createElement('div');
-bgCode.className = 'bgCode';
-bgCode.style.position = 'absolute';
-bgCode.style.width = '100%';
-bgCode.style.height = '100%';
-bgCode.style.overflow = 'hidden';
-bgCode.style.filter = 'blur(2px)';
-bgCode.style.zIndex = '-1';
-bgCode.style.pointerEvents = 'none';
-div.appendChild(bgCode);
-
-var keywords = ['var', 'function', 'return', 'if', 'else', 'for', 'while', 'const', 'let', 'def', 'class', 'import', 'try', 'except', 'elif', 'print', 'echo', 'switch', 'case'];
-var colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#33FFA1'];
-
-var textList = [];
-
-for (let i = 0; i < 70; i++) {
-    var text = document.createElement('span');
-    text.innerHTML = keywords[Math.floor(Math.random() * keywords.length)];
-    text.style.position = 'absolute';
-    text.style.fontSize = '20px';
-    text.style.userSelect = 'none';
-    text.style.color = colors[Math.floor(Math.random() * colors.length)];
-    text.style.top = Math.random() * 100 + '%';
-    text.style.left = Math.random() * 100 + '%';
-    text.style.transition = 'transform 5s linear, opacity 2s linear';
-    text.style.textShadow = '0 0 10px ' + text.style.color;
-    text.style.opacity = '1';
-    bgCode.appendChild(text);
-    textList.push(text);
-}
-
-function moveText() {
-    for (let i = 0; i < textList.length; i++) {
-        textList[i].style.transform = 'translate(' + (Math.random() * 200 - 100) + 'px, ' + (Math.random() * 200 - 100) + 'px)';
-    }
-    setTimeout(moveText, 5000);
-}
-
-div.addEventListener('transitionend', function() {
-    moveText();
-});
-
-
-    var h1 = document.createElement('h1');
-    h1.innerHTML = 'ByteCoder';
-    h1.style.position = 'absolute';
-    h1.style.top = '10%';
-    h1.style.left = '50%';
-    h1.style.transform = 'translate(-50%, -50%)';
-    h1.style.textAlign = 'center';
-    h1.style.color = 'white';
-    h1.style.fontFamily = 'Poppins';
-    h1.style.fontSize = '6em';
-    div.appendChild(h1);
-    var cursor = document.createElement('span');
-    cursor.innerHTML = '_';
-    cursor.style.position = 'absolute';
-    cursor.style.top = '17%';
-    cursor.style.left = '67%';
-    cursor.style.transform = 'translate(0, -50%)';
-    cursor.style.color = 'white';
-    cursor.style.fontSize = '6em';
-    cursor.style.marginLeft = '2px';
-    cursor.style.animation = 'blink 1s infinite';
-    div.appendChild(cursor);
-
-    var blink = function() {
-        var opacity = 1;
-        setInterval(function() {
-            opacity = 1 - opacity;
-            cursor.style.opacity = opacity;
-        }, 500);
-    }();
-    
-    var infoCard = document.createElement('div');
-    infoCard.className = 'infoCard';
-    infoCard.style.position = 'absolute';
-    infoCard.style.width = '60vw';
-    infoCard.style.height = '30vh';
-    infoCard.style.top = '30%';
-    infoCard.style.left = '50%';
-    infoCard.style.transform = 'translate(-50%, calc(-50% + 30vh))';
-    infoCard.style.background = 'rgba(15, 15, 15, 1)';
-    infoCard.style.borderRadius = '10px';
-    infoCard.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-    infoCard.style.overflow = 'hidden';
-    div.appendChild(infoCard);
-
-    var infoCardContents = document.createElement('div');
-    infoCardContents.style.position = 'absolute';
-    infoCardContents.style.top = '50%';
-    infoCardContents.style.left = '50%';
-    infoCardContents.style.transform = 'translate(-50%, -50%)';
-    infoCardContents.innerHTML = 'ByteCoder is a programming competition and coding challenge event. Participants are expected to solve problems and complete coding challenges in the shortest amount of time possible. The event is open to all students and coding enthusiasts.';
-    infoCardContents.style.color = 'white';
-    infoCardContents.style.fontSize = '1.5em';
-    infoCardContents.style.textAlign = 'center';
-    infoCardContents.style.fontFamily = 'Poppins';
-    infoCardContents.style.padding = '20px';
-    infoCard.appendChild(infoCardContents);
-
-
-
-    });
-</script>
-
-
-
+    </div>
 </section>
 
 
-<!-- in reality, this became the background design -->
 
-<script src="mousetrail.js"></script>
+
+
+
+
+
 </body>
+<script src="mousetrail.js"></script>
+
 </html>
